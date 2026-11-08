@@ -1,5 +1,5 @@
 # Faculty Workload Intelligence – Requirements, SQL & UAT Delivery
-
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 A Business Analysis and Analytics portfolio project focused on faculty workload scheduling, academic resource allocation, SQL-based data validation, and business intelligence reporting.
 
 The project simulates a university faculty workload management environment, demonstrating how business requirements, process analysis, data validation, exception tracking, and interactive dashboards can work together to support academic administration.
@@ -231,3 +231,8 @@ The project does not establish production deployment, institutional adoption, or
 Computer Engineering Graduate | Business Analysis | SQL | Power BI | Data Analytics
 
 GitHub: [Prathmesh717](https://github.com/Prathmesh717)
+
+## 📄 License
+
+This project is licensed under the **Apache License 2.0**.
+See the [LICENSE](LICENSE) file for details.
