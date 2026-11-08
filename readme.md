@@ -1,103 +1,233 @@
-# Faculty Workload Scheduling – BA + ETL + BI Project
+# Faculty Workload Intelligence – Requirements, SQL & UAT Delivery
 
-## 📌 Overview
-This project simulates a **university faculty workload scheduling system** to demonstrate both **Business Analyst skills** (requirements, process mapping, UAT) and **technical skills** (ETL, SQL, Python, Power BI).
+A Business Analysis and Analytics portfolio project focused on faculty workload scheduling, academic resource allocation, SQL-based data validation, and business intelligence reporting.
 
-The project mirrors real-world initiatives such as **ERP configuration, compliance validation, and workload dashboards**.
+The project simulates a university faculty workload management environment, demonstrating how business requirements, process analysis, data validation, exception tracking, and interactive dashboards can work together to support academic administration.
 
----
+## 📌 Project Overview
 
-## 📂 Deliverables
-- **Business Requirements Document (BRD)** → [`/docs/brd/`](docs/business_requirements_document/Faculty_Workload_BRD_v0.1.md)
-- **Process Maps (Current vs Future state)** → [`/docs/process_maps/`](./docs/process_maps/)
-- **Entity Relationship Diagram (ERD)** → [`/docs/erd/`](./docs/erd/)
-- **ETL Validation Rules** (SQL + Python) → [`/data/sql/`](./data/sql/)
-- **Power BI Dashboard** → [`/reports/`](./reports/Dashboard.pbix)
-- **UAT Test Cases** → [`/reports/`](./reports/issue_log_export.csv)
+Faculty workload scheduling involves coordinating faculty members, courses, teaching assignments, availability, and workload limits. Inaccurate assignments and scheduling inconsistencies can create operational challenges for academic administrators.
 
----
+This project explores a structured approach to faculty workload analysis through:
 
-## 🛠 Tech Stack
-- **SQL Server / PostgreSQL** → ETL & validation queries  
-- **Python (pandas, matplotlib)** → data validation, conflict detection  
-- **Power BI** → dashboards & reporting  
-- **Visio / draw.io** → process maps, ERD  
+- Business requirements documentation and process analysis.
+- As-Is and To-Be process mapping.
+- SQL Server-based data validation and exception detection.
+- Faculty workload and scheduling analysis.
+- Issue tracking and validation evidence.
+- Power BI dashboards for operational insights.
 
----
+## 🎯 Project Objectives
 
-## 📊 Visuals (samples)
+- Improve visibility into faculty workload distribution.
+- Identify potential workload overloads and assignment inconsistencies.
+- Detect department mismatches, duplicate assignments, and unassigned sections.
+- Establish structured data validation and exception tracking.
+- Provide interactive reporting to support academic resource allocation.
+- Demonstrate the relationship between business requirements and technical implementation.
 
-### Current vs Future Process Maps
-| Current State |
-|---------------|
-| ![Current State](./docs/process_maps/ProcessMap_CurrentState.png) |
+## 📂 Project Deliverables
 
-| Future State |
-|---------------|
-| ![Future State](./docs/process_maps/ProcessMap_FutureState.png) |
+| Deliverable | Description |
+|---|---|
+| Business Requirements Document | Business objectives, requirements, scope, and functional expectations |
+| As-Is and To-Be Process Maps | Current and proposed faculty workload processes |
+| Entity Relationship Diagram | Data entities and their relationships |
+| SQL Validation Scripts | Data quality checks and exception detection |
+| Issue Log | Centralized record of identified data issues |
+| Power BI Dashboard | Three-page interactive workload analytics report |
+| Supporting Documentation | Screenshots, datasets, and project evidence |
 
-## Entity Relationship Diagram
-| Diagram |
-|---------|
-| ![ERD](./docs/erd/erd.png) |
+## 🛠 Technology Stack
 
-## Issue Log
-| Screenshot |
-|------------|
-| ![Future State](./docs/issue_log/Screenshot%202025-09-23%20012420.png) |
+- **SQL Server:** SQL queries, data validation, and workload analysis.
+- **Microsoft Power BI:** Interactive dashboards and business intelligence reporting.
+- **CSV:** Source datasets and issue-log exports.
+- **Microsoft Visio / draw.io:** Process mapping and ER diagram documentation.
 
-## 📊 Dashboards
+## 🏗 Project Structure
 
-This project delivers a series of Power BI dashboards built on top of validated and curated data. Each page provides a different perspective on faculty workload scheduling.
+```text
+faculty-workload-intelligence/
+│
+├── data/
+│   ├── raw/
+│   ├── master/
+│   ├── sql/
+│   └── TryQuery.sql
+│
+├── docs/
+│   ├── BRD.md 
+│   ├── UAT_Plan.md 
+│   ├── process_maps/
+│   └── erd/
+│
+├── reports/
+│   ├── Dashboard.pbix
+│   └── issue_log_export.csv
+│
+├── screenshots/
+│   ├── 1.Overview_Dashboard.png
+│   ├── 2.Faculty_Profile.png
+│   ├── 3.Course_Profile.png
+│   └── UAT_Testing.png
+│
+└── readme.md
+```
+
+## 📋 Business Analysis & Requirements
+
+The project incorporates business analysis activities to translate faculty workload management needs into structured requirements and supporting documentation.
+
+### Business Requirements Document (BRD)
+
+Documents the business problem, project objectives, scope, requirements, business rules, and expected outcomes.
+
+[View Business Requirements Document](docs/BRD.md)
+
+### Process Mapping
+
+The process maps illustrate the difference between the existing workload scheduling approach and a proposed structured process.
+
+**Current State – As-Is**
+
+![Current State Process Map](docs/process_maps/ProcessMap_CurrentState.png)
+
+**Future State – To-Be**
+
+![Future State Process Map](docs/process_maps/ProcessMap_FutureState.png)
+
+### Entity Relationship Diagram
+
+The ERD illustrates the relationships between faculty, courses, availability, and section assignments.
+
+![Entity Relationship Diagram](docs/erd/erd.png)
+
+## ⚙️ SQL-Based Data Validation
+
+SQL Server scripts are used to examine faculty workload and assignment data and identify potential data quality issues.
+
+The validation areas include:
+
+| Validation Rule | Purpose |
+|---|---|
+| Faculty Overload | Identify faculty assignments exceeding workload limits |
+| Unassigned Faculty | Identify sections without an assigned faculty member |
+| Department Mismatch | Identify inconsistencies between faculty and course departments |
+| Duplicate Section | Identify duplicate section assignments |
+| Scheduling Checks | Examine assignment scheduling inconsistencies |
+
+The identified exceptions are recorded in an issue log for investigation and follow-up.
+
+### Issue Log
+
+The issue log provides a centralized view of detected exceptions and includes fields such as:
+
+- RuleName
+- Severity
+- TableName
+- RowKey
+- Details
+- Status
+
+![Issue Log Evidence](screenshots/UAT_Testing.png)
+
+## 📊 Power BI Dashboard
+
+The Power BI report contains three analytical pages designed to provide different perspectives on faculty workload scheduling.
 
 ### 1. Overview Dashboard
-Gives a high-level summary of teaching workload across all terms. Highlights total sections, scheduled hours, faculty, and courses. Also shows workload distribution by department, term, and delivery mode, along with top faculty by load.
+
+Provides a high-level summary of faculty workload across academic terms.
+
+Key insights include:
+- Total sections and scheduled hours.
+- Faculty and course counts.
+- Workload distribution by department.
+- Workload trends by term and delivery mode.
+- Faculty members with the highest assigned workload.
+
 ![Overview Dashboard](screenshots/1.Overview_Dashboard.png)
 
 ### 2. Faculty Profile
-Drill-down into an individual faculty member’s workload. Displays their assignments, total hours vs. maximum load, department, employment type, and whether they are overloaded.
+
+Provides a faculty-level view of workload and assignment distribution.
+
+Key insights include:
+- Individual faculty assignments.
+- Total scheduled hours.
+- Maximum workload limits.
+- Department and employment information.
+- Workload overload indicators.
+
 ![Faculty Profile](screenshots/2.Faculty_Profile.png)
 
 ### 3. Course Profile
-Course-centric view showing course details (code, department, credits, contact hours) and workload distribution across sections, delivery modes, terms, and assigned faculty.
+
+Provides a course-centric view of teaching assignments and workload distribution.
+
+Key insights include:
+- Course code and department.
+- Course credits and contact hours.
+- Section distribution.
+- Faculty assignment distribution.
+- Workload by term and delivery mode.
+
 ![Course Profile](screenshots/3.Course_Profile.png)
 
-## 📝 Validation & Exceptions Evidence
-All data quality checks (FR-01 to FR-05) are logged in the `issue_log` table.  
-![UAT_Testing](screenshots/UAT_Testing.png)
+## 🔍 Business Value
 
-It contains:
-- RuleName (Overload, Unassigned, DepartmentMismatch, DuplicateSection, BadHours)
-- Severity (High/Medium)
-- TableName and RowKey (to locate the issue)
-- Details (what was wrong)
-- Status (Open/Closed)
+The project demonstrates how structured requirements and data analytics can support academic workload management.
 
----
+Potential business benefits include:
 
-## 🔚 Final Outcomes & Summary
+- **Workload visibility:** Helps administrators understand faculty assignment distribution.
+- **Exception identification:** Highlights potential overloads and assignment inconsistencies.
+- **Data quality:** Provides structured validation checks and issue tracking.
+- **Decision support:** Enables workload analysis through interactive Power BI dashboards.
+- **Process improvement:** Documents opportunities to improve workload scheduling and monitoring.
 
-This project successfully delivered a full faculty workload scheduling system built end-to-end. The key outcomes:
+## 📚 Skills Demonstrated
 
-- **Validated and cleansed data pipeline**: All raw data was processed via SQL validations (FR-01 to FR-05). Any invalid rows are logged in `issue_log` and excluded from curated tables.  
-- **Interactive dashboards for decision support**: The Power BI report includes:  
-  1. **Overview Dashboard** : At-a-glance totals, workload distributions, and exception KPIs.  
-  2. **Faculty Profile** : Drill-down for each faculty, showing assignments, total hours vs max load, availability, and overload status.  
-  3. **Course Profile** : Course-level load distribution across terms, delivery modes, and assigned instructors.  
-  4. **Exceptions / Issue Log** : Complete visibility into data problems with filters and evidence export.  
-- **Traceability & auditability** : The project includes an exported `issue_log_export.xlsx` as proof of detected issues, and a mini testing mapping showing each functional requirement was verified.  
-- **Business value & insight**:
-  - Quickly identifies overloaded faculty to prevent burnout.  
-  - Highlights department mismatches, unassigned sections, and bad-hours issues for cleanup.  
-  - Empowers administrators to plan by term and delivery mode using data-backed dashboards.
+**Business Analysis**
+- Business requirements documentation
+- Functional requirements analysis
+- As-Is and To-Be process mapping
+- Business rules documentation
+- Requirements and process understanding
 
-Overall, this deliverable bridges the gap between requirements, data validation, and visual analytics — making faculty workload management transparent, auditable, and actionable.
+**SQL & Data Analytics**
+- SQL Server
+- Data validation
+- Data quality analysis
+- Exception detection
+- Workload analysis
 
----
+**Business Intelligence**
+- Microsoft Power BI
+- Dashboard development
+- KPI reporting
+- Data visualization
+- Operational insights
 
-## 👤 Author
-**Harsh Dalwadi**  
-Aspiring Data Analyst | SQL • Python • Power BI • ETL • Business Analysis  
+**Testing & Documentation**
+- Issue and defect tracking
+- Validation evidence
+- Business documentation
+- UAT planning and analysis
 
-📧 harshdalwadi.analyst@gmail.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/harshhd)  
+*These skills map directly to the Technical Business Analyst role, demonstrating practical capabilities in requirements gathering (BRD), As-Is/To-Be process mapping, SQL-based data analysis, functional testing (UAT), and stakeholder reporting through interactive Power BI dashboards.*
+
+## ⚠️ Project Scope & Limitations
+
+This is a portfolio project using supplied project datasets to simulate an academic workload scheduling environment. The validation outputs and dashboard insights should be interpreted within the scope of the available data and implemented rules.
+
+The project does not establish production deployment, institutional adoption, or formal UAT sign-off.
+
+## 👤 Project Developer
+
+**Prathmesh Aghor**
+
+Computer Engineering Graduate | Business Analysis | SQL | Power BI | Data Analytics
+
+GitHub: [Prathmesh717](https://github.com/Prathmesh717)
